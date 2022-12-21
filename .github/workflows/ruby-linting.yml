@@ -33,10 +33,7 @@ jobs:
 
     # This step is not necessary if you add the gem to your Gemfile
     - name: Install Rubocop
-      run: gem install rubocop
-
-    - name: Install dependencies
-      run: bundle install
+      run: bundle add rubocop
 
     - name: Run Rubocop
       run: bundle exec rubocop
