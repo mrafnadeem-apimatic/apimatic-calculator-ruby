@@ -1,8 +1,8 @@
 Gem::Specification.new do |s|
-  s.name = 'apimatic_calculator'
+  s.name = 'rafay_calculator'
   s.version = '1.0.0'
-  s.summary = 'apimatic_calculator'
-  s.description = 'Simple calculator API hosted on APIMATIC'
+  s.summary = 'Publishing test'
+  s.description = 'Simple calculator API hosted on APIMATIC. For package publishing testing only.'
   s.authors = ['Muhammad Rafay Nadeem',]
   s.email = ['muhammad.nadeem@apimatic.io',]
   s.homepage = 'https://apimatic.io'
