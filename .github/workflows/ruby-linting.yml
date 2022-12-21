@@ -1,0 +1,39 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: "Linting"
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  rubocop:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby-version: ['2.6', '2.7', '3.0']
+      fail-fast: false
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # If running on a self-hosted runner, check it meets the requirements
+    # listed at https://github.com/ruby/setup-ruby#using-self-hosted-runners
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@ee2113536afb7f793eed4ce60e8d3b26db912da4 # v1.127.0
+      with:
+        ruby-version: ${{ matrix.ruby-version }}
+
+    # This step is not necessary if you add the gem to your Gemfile
+    - name: Install Rubocop
+      run: bundle add rubocop
+
+    - name: Run Rubocop
+      run: bundle exec rubocop
