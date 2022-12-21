@@ -1,5 +1,5 @@
 Gem::Specification.new do |s|
-  s.name = 'rafay_calculator'
+  s.name = 'rafay_calculator_test'
   s.version = '1.0.0'
   s.summary = 'Publishing test'
   s.description = 'Simple calculator API hosted on APIMATIC. For package publishing testing only.'
