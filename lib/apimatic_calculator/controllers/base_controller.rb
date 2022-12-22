@@ -25,8 +25,8 @@ module ApimaticCalculator
 
     def validate_parameters_types(args)
       args.each do |_name, type|
-        key, val = type.first
-        APIHelper.validate_types(key, val) unless key.nil?
+        myKey, val = type.first
+        APIHelper.validate_types(myKey, val) unless myKey.nil?
       end
     end
 
