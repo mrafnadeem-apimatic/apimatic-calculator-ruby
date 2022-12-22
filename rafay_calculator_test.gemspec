@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'rafay_calculator_test'
-  s.version = '1.0.1'
+  s.version = '1.0.2'
   s.summary = 'Publishing test'
   s.description = 'Simple calculator API hosted on APIMATIC. For package publishing testing only.'
   s.authors = ['Muhammad Rafay Nadeem',]

@@ -36,6 +36,7 @@ jobs:
       - run: bundle install
 
       - name: Publish to RubyGems
+        id: release
         run: |
           mkdir -p $HOME/.gem
           touch $HOME/.gem/credentials
@@ -56,7 +57,3 @@ jobs:
       - name: Create changelog for the release
         if: steps.release.outputs.exit_code == 0
         uses: ncipollo/release-action@v1
-        with:
-          tag: ${{ steps.tag_version.outputs.new_tag }}
-          name: Release ${{ github.event.inputs.Title }}
-          body: ${{ steps.tag_version.outputs.changelog }}
